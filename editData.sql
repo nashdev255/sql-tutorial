@@ -9,4 +9,14 @@ SELECT price - 30 FROM items;
 SELECT SUM(price) FROM items WHERE category = "Beauty";
 
 /* 特定のカラムの平均値を取得する */
-SELECT SUM(number_of_followers) FROM user WHERE name LIKE "%Official%";
+SELECT AVG(number_of_followers) FROM user WHERE name LIKE "%Official%";
+
+/* データ、レコードの数を取得する */
+SELECT COUNT(*) FROM user;
+
+/* 最小値、最大値を取得する */
+SELECT MAX(number_of_followers) FROM user WHERE name LIKE "%Official%";
+/* The same action
+SELECT number_of_followers FROM user ORDER BY number_of_followers DESC LIMIT 1;
+*/
+SELECT MIN(price) from items WHERE category = "Laptop";
