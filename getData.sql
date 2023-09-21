@@ -19,5 +19,12 @@ SELECT * FROM user WHERE name LIKE "%Official";
 SELECT * FROM user WHERE NOT name = "Bob";
 SELECT * FROM user WHERE NOT name LIKE "%Official%";
 
-/* 要素が存在しない(IS NULL)のデータを扱う */
+/* 要素が存在しない(IS NULL)のデータを取得する */
 SELECT * FROM user WHERE name IS NOT NULL;
+
+/* 複数の条件(論理演算し)を指定してデータを取得する */
+SELECT * FROM user WHERE number_of_followers >= 1000 AND name LIKE "%Official%";
+SELECT * FROM user WHERE name = "Bob" OR name = "Tom";
+
+/* 取得したデータの並び替え */
+
