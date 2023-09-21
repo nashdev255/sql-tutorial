@@ -19,7 +19,8 @@ SELECT * FROM user WHERE name LIKE "%Official";
 SELECT * FROM user WHERE NOT name = "Bob";
 SELECT * FROM user WHERE NOT name LIKE "%Official%";
 
-/* 要素が存在しない(IS NULL)のデータを取得する */
+/* 要素が存在しない/するデータを取得する */
+SELECT * FROM user WHERE name IS NULL;
 SELECT * FROM user WHERE name IS NOT NULL;
 
 /* 複数の条件(論理演算し)を指定してデータを取得する */
@@ -31,3 +32,6 @@ SELECT * FROM user ORDER BY number_of_followers DESC;
 SELECT * FROM user WHERE name LIKE "%Official%" ORDER BY number_of_followers DESC;
 SELECT * FROM user WHERE name LIKE "%Official%" ORDER BY number_of_followers ASC;
 
+/* 取得する件数を指定する */
+SELECT * FROM user WHERE name LIKE "%Official%" ORDER BY number_of_followers DESC LIMIT 1;
+SELECT * FROM user ORDER BY number_of_followers DESC LIMIT 5;
