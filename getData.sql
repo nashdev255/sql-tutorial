@@ -14,3 +14,10 @@ SELECT * FROM user WHERE registered_at >= "2022-01-01";
 SELECT * FROM user WHERE name LIKE "%Official%";
 SELECT * FROM user WHERE name LIKE "Official%";
 SELECT * FROM user WHERE name LIKE "%Official";
+
+/* 特定の要素を持たない、または含まないuserのレコードを取得する */
+SELECT * FROM user WHERE NOT name = "Bob";
+SELECT * FROM user WHERE NOT name LIKE "%Official%";
+
+/* 要素が存在しない(IS NULL)のデータを扱う */
+SELECT * FROM user WHERE name IS NOT NULL;
