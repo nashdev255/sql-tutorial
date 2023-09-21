@@ -27,4 +27,7 @@ SELECT * FROM user WHERE number_of_followers >= 1000 AND name LIKE "%Official%";
 SELECT * FROM user WHERE name = "Bob" OR name = "Tom";
 
 /* 取得したデータの並び替え */
+SELECT * FROM user ORDER BY number_of_followers DESC;
+SELECT * FROM user WHERE name LIKE "%Official%" ORDER BY number_of_followers DESC;
+SELECT * FROM user WHERE name LIKE "%Official%" ORDER BY number_of_followers ASC;
 
