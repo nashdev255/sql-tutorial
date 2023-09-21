@@ -9,3 +9,8 @@ SELECT * FROM user WHERE registered_at = "2023-09-21";
 SELECT * FROM user WHERE id = 100;
 SELECT * FROM user WHERE number_of_followers >= 1000;
 SELECT * FROM user WHERE registered_at >= "2022-01-01";
+
+/* 特定の要素を"含む"userのレコードを取得する */
+SELECT * FROM user WHERE name LIKE "%Official%";
+SELECT * FROM user WHERE name LIKE "Official%";
+SELECT * FROM user WHERE name LIKE "%Official";
