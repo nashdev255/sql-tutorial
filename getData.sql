@@ -35,3 +35,8 @@ SELECT * FROM user WHERE name LIKE "%Official%" ORDER BY number_of_followers ASC
 /* 取得する件数を指定する */
 SELECT * FROM user WHERE name LIKE "%Official%" ORDER BY number_of_followers DESC LIMIT 1;
 SELECT * FROM user ORDER BY number_of_followers DESC LIMIT 5;
+
+/* 取得したデータをクエリに流用する(サブクエリ) */
+SELECT * FROM user WHERE number_of_followers > (
+  SELECT AVG(number_of_followers) FROM user WHERE name LIKE "%Official%" ORDER BY number_of_followers DESC LIMIT 100;
+);
