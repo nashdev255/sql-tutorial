@@ -22,6 +22,10 @@ SELECT number_of_followers FROM user ORDER BY number_of_followers DESC LIMIT 1;
 SELECT MIN(price) from items WHERE category = "Laptop";
 
 /* グループ化 */
-SELECT COUNT(*), registered_at GROUP BY registered_at;
-SELECT SUM(price), category GROUP BY category;
+SELECT COUNT(*), registered_at FROM user GROUP BY registered_at;
+SELECT SUM(price), category FROM items GROUP BY category;
+SELECT SUM(price), category, stock_at FROM items GROUP BY category, stock_at;
+SELECT SUM(price), stock_at WHERE category = "服" GROUP BY stock_at;
 
+/* グループ化後の絞り込み */
+SELECT COUNT(*), registered_at FROM user GROUP BY registered_at HAVING COUNT(*) > 100;
