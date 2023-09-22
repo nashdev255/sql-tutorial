@@ -20,3 +20,8 @@ SELECT MAX(number_of_followers) FROM user WHERE name LIKE "%Official%";
 SELECT number_of_followers FROM user ORDER BY number_of_followers DESC LIMIT 1;
 */
 SELECT MIN(price) from items WHERE category = "Laptop";
+
+/* グループ化 */
+SELECT COUNT(*), registered_at GROUP BY registered_at;
+SELECT SUM(price), category GROUP BY category;
+
