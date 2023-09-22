@@ -40,3 +40,9 @@ SELECT * FROM user ORDER BY number_of_followers DESC LIMIT 5;
 SELECT * FROM user WHERE number_of_followers > (
   SELECT AVG(number_of_followers) FROM user WHERE name LIKE "%Official%" ORDER BY number_of_followers DESC LIMIT 100;
 );
+
+/* カラム名の表示を指定する */
+SELECT name AS "フォロワーが1000人以上いるユーザー" FROM user WHERE number_of_followers >= 1000;
+SELECT name AS "公式の中でも平均よりフォロワー数が多いユーザー" FROM user WHERE number_of_followers > (
+  SELECT AVG(number_of_followers) FROM user WHERE name LIKE "%Official%" ORDER BY number_of_followers DESC LIMIT 100;
+) AND name LIKE "%Official%";
