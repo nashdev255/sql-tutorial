@@ -46,3 +46,7 @@ SELECT name AS "フォロワーが1000人以上いるユーザー" FROM user WHE
 SELECT name AS "公式の中でも平均よりフォロワー数が多いユーザー" FROM user WHERE number_of_followers > (
   SELECT AVG(number_of_followers) FROM user WHERE name LIKE "%Official%" ORDER BY number_of_followers DESC LIMIT 100;
 ) AND name LIKE "%Official%";
+
+/* テーブルを紐づける(外部キーと主キーの連携) */
+SELECT SUM(items.price), blend.name FROM items JOIN blend ON items.blend_id = blend.id GROUP BY items.blend_id;
+SELECT players.goals, teams.name FROM players LEFT JOIN teams ON players.previous_team_id = teams.id WHERE players.previous_team_id IS NULL;
